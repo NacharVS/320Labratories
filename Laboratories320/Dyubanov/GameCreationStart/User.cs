@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Laboratories320.Dyubanov.GameCreationStart
 {
+
+    //- SearchByName(gets string name) returns required object stats;
+    //- GameStat() returns all statistics from game(all matches quantity)
+
     class User : IUserName, IDayOfBirth, IFinishedMatches, IVictories, IGamePoints
     {
         private string UserName = "";
