@@ -4,17 +4,19 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Laboratories320.Seydametov.Parallel
+namespace Laboratories320.Seydametov.Task_Parallel
 {
-    class Program
+    class Paral
     {
-        static void Parallel()
+        public static void Main1()
         {
             Parallel.Invoke(sum, mul, div);
         }
         static void sum()
         {
-            Console.WriteLine(5 + 9);
+            Thread.Sleep(2000);
+            Console.WriteLine("id " + Task.CurrentId);
+            Console.WriteLine($"res{5 + 9}");
         }
 
         static void mul()
