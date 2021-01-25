@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Laboratories320.Abdrakov.GameCreationStart
 {
@@ -24,6 +25,12 @@ namespace Laboratories320.Abdrakov.GameCreationStart
         // Returns player's stats
         public static int SearchByName(string name)
         {
+
+            User neededUser;
+            Parallel.ForEach(users, (User user) => {
+                if (user.userName == name)
+                    neededUser = user;
+            });
 
         }
     }
