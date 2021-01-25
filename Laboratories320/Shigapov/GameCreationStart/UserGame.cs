@@ -21,10 +21,5 @@ namespace Laboratories320.Shigapov.GameCreationStart
             this.GamePoints = gamePoints;
         }
 
-        public int GetStat()
-        {
-            return FinishedMatches;
-        }
-
     }
 }
