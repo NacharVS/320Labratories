@@ -30,6 +30,6 @@ Create class for game user with fields:
 - UserName; - DayOfBirth; -FinishedMatches, - Victories, - gamePoints;
 Implement required properties.
 Inplement methods:
-- SearchByName(gets string name) returns required object;
+- SearchByName(gets string name) returns required object stats;
 - GameStat() returns all statistics from game(all matches quantity)
 
