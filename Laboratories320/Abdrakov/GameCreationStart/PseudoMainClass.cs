@@ -20,7 +20,15 @@ namespace Laboratories320.Abdrakov.GameCreationStart
             User user7 = new User("Ilham", new DateTime(2004, 4, 11), 0, 0, 0);
             User user8 = new User("Fanil", new DateTime(2002, 12, 8), 41, 22, 1800);
             users = new User[] { user1, user2, user3, user4, user5, user6, user7, user8};
-            Console.WriteLine(SearchByName("Fanil"));
+
+            string userName = "Fanil";
+            int searchResult = SearchByName(userName);
+            Console.WriteLine("User " + userName + " has stats: " + searchResult);
+            Console.WriteLine();
+
+            int sumOfPlayedGames = GameStat();
+            Console.WriteLine();
+            Console.WriteLine("All matches quantity: " + sumOfPlayedGames);
         }
 
         // Returns player's stats
@@ -32,8 +40,19 @@ namespace Laboratories320.Abdrakov.GameCreationStart
                     neededUser = user;
             });
             if (neededUser is object)
-                return neededUser.GameStat();
+                return neededUser.finishedMatches;
             return -1;
+        }
+
+        public static int GameStat()
+        {
+            int sumOfPlayedGames = 0;
+            object locker = new object();
+            Parallel.ForEach(users, (User user) => {
+                Console.WriteLine("User: " + user.userName + ", FinishedMatches: " + user.finishedMatches);
+                lock (locker) sumOfPlayedGames += user.finishedMatches;
+            });
+            return sumOfPlayedGames;
         }
     }
 }

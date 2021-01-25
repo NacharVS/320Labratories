@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Laboratories320.Abdrakov.GameCreationStart
 {
-    public class User : IStat
+    public class User
     {
         public string userName { get; private set; }
         public DateTime dayOfBirth { get; private set; }
@@ -19,11 +19,6 @@ namespace Laboratories320.Abdrakov.GameCreationStart
             this.finishedMatches = finishedMatchesIn;
             this.victories = victoriesIn;
             this.gamePoints = gamePointsIn;
-        }
-
-        public int GameStat()
-        {
-            return finishedMatches;
         }
     }
 }
