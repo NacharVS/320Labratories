@@ -36,7 +36,7 @@ namespace Laboratories320.Tikhonov.ContinuationTasks
         {
             char[] charArr = number.ToString().ToCharArray();
             foreach (char i in charArr)
-
+ 
             {
                 if ((i - '0')%2 == 0)
                 {

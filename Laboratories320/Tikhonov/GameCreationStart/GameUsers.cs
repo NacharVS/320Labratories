@@ -4,7 +4,22 @@ using System.Text;
 
 namespace Laboratories320.Tikhonov.GameCreationStart
 {
-    class GameUsers
+    class GameUsers : Ifields
     {
+
+
+        public GameUsers(String userNasme, DateTime dayOfBirth, int finishedMatches, int victories, int gamePoints)
+        {
+            this.UserName = userNasme
+            this.DayOfBirth = dayOfBirth
+            this.FinishedMatches = finishedMatches
+            this.Victories = victories
+            this.GamePoints = gamePoints;
+        }
+        public String UserName { get { return (userName); } set { userName = value; } }
+        public DateTime DayOfBirth { get { return (dayOfBirth); } set { dayOfBirth = value; } }
+        public int FinishedMatches { get { return (finishedMatches); } set { finishedMatches = value; } }
+        public int Victories { get { return (victories); } set { victories = value; } }
+        public int GamePoints { get { return (gamePoints); } set { gamePoints = value; } }
     }
 }
