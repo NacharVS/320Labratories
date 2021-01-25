@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Laboratories320.Abdrakov.GameCreationStart
 {
-    public static class PseudoMainClass
+    public static class GameMain
     {
         public static User[] users;
-        public static void PseudoMain()
+        public static void StartGame()
         {
             User user1 = new User("Igor", new DateTime(2002, 2, 1), 13, 3, 1400);
             User user2 = new User("Vitala", new DateTime(2004, 11, 23), 42, 12, 3200);
