@@ -10,8 +10,8 @@ namespace Laboratories320.Tikhonov.GameCreationStart
 
 
 
-        String UserName { get; set; }
-        DateTime DayOfBirth { get; set; }
+        string UserName { get; set; }
+        //DateTime DayOfBirth { get; set; }
         int FinishedMatches { get; set; }
         int Victories { get; set; }
         int GamePoints { get; set; }
