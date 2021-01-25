@@ -12,7 +12,6 @@ namespace Laboratories320
         {
             Console.WriteLine("Leave hope behind all who enters here...");
             Console.WriteLine();
-            GameMain.StartGame();
         }
     }
 }

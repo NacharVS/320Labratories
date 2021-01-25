@@ -21,17 +21,15 @@ namespace Laboratories320.Abdrakov.GameCreationStart
             User user8 = new User("Fanil", new DateTime(2002, 12, 8), 41, 22, 1800);
             users = new User[] { user1, user2, user3, user4, user5, user6, user7, user8};
 
-            string userName = "Fanil";
+            string userName = "Fanil"; // Какого юзера искать
             int searchResult = SearchByName(userName);
             Console.WriteLine("User " + userName + " has stats: " + searchResult);
-            Console.WriteLine();
 
             int sumOfPlayedGames = GameStat();
-            Console.WriteLine();
             Console.WriteLine("All matches quantity: " + sumOfPlayedGames);
         }
 
-        // Returns player's stats
+        // Возвращает стату по имени
         public static int SearchByName(string name)
         {
             User neededUser = null;
@@ -44,12 +42,14 @@ namespace Laboratories320.Abdrakov.GameCreationStart
             return -1;
         }
 
+        // Возвращает общее кол-во матчей
         public static int GameStat()
         {
             int sumOfPlayedGames = 0;
             object locker = new object();
             Parallel.ForEach(users, (User user) => {
-                Console.WriteLine("User: " + user.userName + ", FinishedMatches: " + user.finishedMatches);
+                // Печатает инфу о каждом юзере, но этого в задании не было, поэтому закомменчено
+                // Console.WriteLine("User: " + user.userName + ", FinishedMatches: " + user.finishedMatches);
                 lock (locker) sumOfPlayedGames += user.finishedMatches;
             });
             return sumOfPlayedGames;
