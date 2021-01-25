@@ -14,7 +14,6 @@ namespace Laboratories320.Shigapov.ContinuationTasks
                 Composit = Composit*array[i];
             }
             Console.WriteLine("Сomposition: " + Composit);
-
         }
 
         public static void Even()
@@ -30,8 +29,6 @@ namespace Laboratories320.Shigapov.ContinuationTasks
             }
             Console.WriteLine("Even digits: "+EvenDigits);
         }
-
-
 
     }
 }
