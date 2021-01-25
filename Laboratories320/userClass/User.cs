@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Laboratories320.thread
+namespace Laboratories320.userClass
 {
-    class ThreadSort
+    class User
     {
     }
 }
