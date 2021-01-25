@@ -20,20 +20,32 @@ namespace Laboratories320.Hamatullin._6praktik
             this.Victories = Victories;
             this.GamePoints = GamePoints;
         }
+        public void Search(string name)
+        {
+            if(name == UserName)
+            {
+                Console.WriteLine($"Имя найдено: {UserName}");
+            }
+        }
+        public void ReturnAll()
+        {
+            Console.WriteLine($"Ник: {UserName}, Количество оконченных матчей: {FinishedMatches}, " +
+                $"Количество побед: {Victories}, Количество игровых очков: {GamePoints}");
+        }
     }
     class GameCreationStart
     {
         static Player player1 = new Player("Vasyan", 2002, 10, 5, 1000);
         static Player player2 = new Player("Imilkin", 2000, 29, 10, 3203);
         static Player player3 = new Player("KiamchikKruts", 1999, 50, 30, 7203);
-        public string Search(Player player)
+        static List<Player> players = new List<Player> { player1, player2, player3 };
+        public static void SearchByName(string name)
         {
-            return player.UserName;
+            Parallel.ForEach(players, s => s.Search(name));
         }
-        public static string SearchByName()
+        public static void ReturnAllStats()
         {
-            ParallelLoopResult result = Parallel.ForEach<Player>(new List<Player>() { player1, player2, player3 }, Search);
-
+            Parallel.ForEach(players, s => s.ReturnAll());
         }
         
     }
