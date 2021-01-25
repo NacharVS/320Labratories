@@ -1,5 +1,4 @@
-﻿using Laboratories320.Dyubanov.StrategyGame;
-using Laboratories320.Dyubanov.Threading;
+﻿using Laboratories320.Dyubanov.GameCreationStart;
 using System;
 using System.Threading.Tasks;
 
@@ -9,7 +8,8 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            Parallel.Invoke();
+            Start st = new Start();
+            st.start();
         }
     }
 }
