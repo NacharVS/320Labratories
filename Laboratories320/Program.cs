@@ -1,6 +1,7 @@
 ﻿using Laboratories320.Dyubanov.StrategyGame;
 using Laboratories320.Dyubanov.Threading;
 using System;
+using System.Threading.Tasks;
 
 namespace Laboratories320
 {
@@ -8,8 +9,7 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            ContinuationTasks c = new ContinuationTasks();
-            c.Start();
+            Parallel.Invoke();
         }
     }
 }
