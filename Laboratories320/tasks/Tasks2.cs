@@ -13,7 +13,6 @@ namespace Laboratories320.tasks
 
         static void MainTwo()
         {
-
             Task task1 = new Task(() => Random_Ar());
             task1.Start();
 
