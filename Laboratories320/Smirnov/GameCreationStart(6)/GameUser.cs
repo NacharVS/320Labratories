@@ -20,12 +20,5 @@ namespace Laboratories320.Smirnov.GameCreationStart_6_
             Victories = victories;
             GamePoints = gamepoints;
         }
-
-        public static void GameStat(GameUser gameUser)
-        {
-            Console.WriteLine($"User name: {gameUser.Name} \nDay of birth: {gameUser.DateOfBirth} \n" +
-                $"Finished matches: {gameUser.FinishedMatches} \nVictories: {gameUser.Victories} \nGame points: " +
-                $"{gameUser.GamePoints}");
-        }
     }
 }
