@@ -6,5 +6,8 @@ namespace Laboratories320.Sindryakov.GameCreationStartLesson
 {
     class GameCreationStart
     {
+
+
+
     }
 }
