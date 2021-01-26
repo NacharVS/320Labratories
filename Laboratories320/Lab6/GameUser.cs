@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Laboratories320.Lab6
 {
-    class Game
+    class GameUser
     {
     }
 }
