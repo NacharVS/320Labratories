@@ -29,5 +29,6 @@ namespace Laboratories320.Dyubanov.GameCreationStart
         public int Victories { get => UserVictories; set => UserVictories = value; }
         public long GamePoints { get => UserGamePoints; set => UserGamePoints = value; }
         public DateTime DayOfBirth { get => UserDayOfBirth; set => UserDayOfBirth = value; }
+
     }
 }

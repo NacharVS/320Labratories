@@ -8,8 +8,6 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            Start st = new Start();
-            st.start();
         }
     }
 }
