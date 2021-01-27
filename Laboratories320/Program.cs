@@ -12,8 +12,12 @@ namespace Laboratories320
         {
             //Threading thr = new Threading();
             //thr.Start();
-            Tasking thr = new Tasking();
-            thr.Start();
+            //Tasking thr = new Tasking();
+            //thr.Start();
+            {
+                Console.WriteLine($"Информация о пользователе:\n{userName}\n" +
+                    $"Дата рождения: {dayOfBirth}");
+            }
         }
     }
 }
