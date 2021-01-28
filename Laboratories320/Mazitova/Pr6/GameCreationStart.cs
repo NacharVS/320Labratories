@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Laboratories320.Mazitova.Pr6
 {
@@ -12,9 +13,20 @@ namespace Laboratories320.Mazitova.Pr6
         private int Victories { get; set; }
         private int GamePoints { get; set; }
 
-        public string SearchByName()
+        List<GameCreationStart> gameUser = new List<GameCreationStart> 
         {
-            return "";
+        
+        };
+
+        public void SearchByName( string name)
+        {
+            Parallel.ForEach(gameUser, user =>
+           {
+               if (user.UserName == name)
+               {
+                   Console.WriteLine("Имя пользователя: {0}");
+               }
+           });
         }
 
         public void GameStat()
