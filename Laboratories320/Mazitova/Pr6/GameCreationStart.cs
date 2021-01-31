@@ -29,9 +29,6 @@ namespace Laboratories320.Mazitova.Pr6
            });
         }
 
-        public void GameStat()
-        {
-
-        }
+       
     }
 }
