@@ -6,5 +6,6 @@ namespace Laboratories320.Seydametov.GameCreaction.Interfaces
 {
     interface IVictories
     {
+        public int Victories { get; set; }
     }
 }

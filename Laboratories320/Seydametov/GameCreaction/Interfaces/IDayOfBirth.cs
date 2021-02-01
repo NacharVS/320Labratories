@@ -6,5 +6,6 @@ namespace Laboratories320.Seydametov.GameCreaction.Interfaces
 {
     interface IDayOfBirth
     {
+        public DateTime DayOfBirth { get; set; }
     }
 }

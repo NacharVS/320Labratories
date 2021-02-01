@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Laboratories320.Seydametov.GameCreaction.Interfaces
 {
-    interface IgamePoints
+    interface IGamePoints
     {
+        public long GamePoints { get; set; }
     }
 }
