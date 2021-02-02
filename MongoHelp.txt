@@ -1,0 +1,40 @@
+        static async Task MongoInsert(Potato pot)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("MilkyWay");
+            var collection = database.GetCollection<Potato>("OchpochmacSystem");
+            await collection.InsertOneAsync(pot);
+
+
+static async Task MongoConnect()
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("MilkyWay");
+            var collection = database.GetCollection<Potato>("OchpochmacSystem");
+            var student = new BsonDocument();
+            var students = await collection.Find(student).ToListAsync();
+
+            foreach (var item in students)
+            {
+                Console.WriteLine(item.kind);
+
+            }
+        }
+
+static async Task SearchByName(string searchKind)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("MilkyWay");
+            var collection = database.GetCollection<Potato>("OchpochmacSystem");
+            var students = await collection.Find(std => std.kind == searchKind).ToListAsync();
+
+            foreach (var item in students)
+            {
+                Console.WriteLine(item.size);
+
+            }
+
+        }
