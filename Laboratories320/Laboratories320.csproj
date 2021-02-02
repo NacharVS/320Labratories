@@ -6,4 +6,8 @@
     <StartupObject>Laboratories320.Program</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="task 02.02.21\" />
+  </ItemGroup>
+
 </Project>
