@@ -4,12 +4,9 @@ using System.Text;
 
 namespace Laboratories320.task_14._01._21
 {
-    class Fairy : IHealth, IMove, IHeal
+    class Fairy : Unit, IHealth, IMove, IHeal
     {
-        public string name;
-        public double power;
-        public string spesialPower;
-        public double kindness;
+        public string SpesialPower { get; set; }
 
         public int Helth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
