@@ -6,6 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Laboratories320.Shigapov.ContinuationTasks;
 using Laboratories320.Shigapov.GameCreationStart;
+using Laboratories320.Shigapov.StrategyGame;
+using Laboratories320.Shigapov.Mongo;
 
 namespace Laboratories320
 {
@@ -27,6 +29,13 @@ namespace Laboratories320
             Task task1 = Task.Run(() => Continuation.Сomposition(array));
             Task task2 = task1.ContinueWith(mul => Continuation.Even());
             task2.Wait();
+            //
+            WarUnit z = new WarUnit
+            {
+                Speed = 3,
+                Armor = 13
+            };
+            MongpTest.MongoInsert(z);
 
         }
     }
