@@ -12,12 +12,33 @@ namespace Laboratories320.Shigapov.Mongo
 {
     class MongpTest
     {
-        public static async Task MongoInsert(WarUnit pot)
+
+        public static void MainMongpTest()
+        {
+            Player z = new Player
+            {
+                Speed = 3,
+                Armor = 13,
+                Health = 100,
+                Name = "Ivan"
+            };
+
+            Player y = new Player
+            {
+                Speed = 3,
+                Armor = 23,
+                Health = 100,
+                Name = "Alex"
+            };
+           ReplaceByName(y, "Ivan").GetAwaiter().GetResult();
+
+        }
+        public static async Task MongoInsert(Player pot)
         {
             string connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("Player");
-            var collection = database.GetCollection<WarUnit>("CyberSportSystem");
+            var collection = database.GetCollection<Player>("CyberSportSystem");
             await collection.InsertOneAsync(pot);
 
         }
@@ -26,7 +47,7 @@ namespace Laboratories320.Shigapov.Mongo
             string connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("Player");
-            var collection = database.GetCollection<WarUnit>("CyberSportSystem");
+            var collection = database.GetCollection<Player>("CyberSportSystem");
             var student = new BsonDocument();
             var students = await collection.Find(student).ToListAsync();
 
@@ -35,13 +56,13 @@ namespace Laboratories320.Shigapov.Mongo
                 Console.WriteLine(item.Speed);
             }
         }
-        public static async Task SearchBySpeed(double speed)
+        public static async Task SearchByName(string Name)
         {
             string connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("Player");
-            var collection = database.GetCollection<WarUnit>("CyberSportSystem");
-            var students = await collection.Find(std => std.Speed == speed).ToListAsync();
+            var collection = database.GetCollection<Player>("CyberSportSystem");
+            var students = await collection.Find(std => std.Name == Name).ToListAsync();
 
             foreach (var item in students)
             {
@@ -49,13 +70,13 @@ namespace Laboratories320.Shigapov.Mongo
             }
         }
 
-        public static async Task ReplaceBySpeed(double speed, WarUnit Z)
+        public static async Task ReplaceByName(Player Z, string Name)
         {
             string connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("Player");
-            var collection = database.GetCollection<WarUnit>("CyberSportSystem");
-            var students = collection.ReplaceOne(std => std.Speed == speed, Z );
+            var collection = database.GetCollection<Player>("CyberSportSystem");
+            await collection.ReplaceOneAsync(std => std.Name == Name, Z );
         }
     }
 }

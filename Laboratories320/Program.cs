@@ -30,13 +30,7 @@ namespace Laboratories320
             Task task2 = task1.ContinueWith(mul => Continuation.Even());
             task2.Wait();
             //
-            WarUnit z = new WarUnit
-            {
-                Speed = 3,
-                Armor = 13,
-                Health = 100
-            };
-            MongpTest.MongoInsert(z).GetAwaiter().GetResult();
+            MongpTest.MainMongpTest();
 
         }
     }

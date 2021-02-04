@@ -11,18 +11,15 @@ namespace Laboratories320.Shigapov.StrategyGame
 {
     class WarUnit : Unit, IAttack, IMove
     {
-        [BsonId]
-        [BsonIgnoreIfDefault]
-        public ObjectId id;
-        [BsonIgnoreIfDefault]
+  
         public int Speed { get; set; }
-        [BsonIgnoreIfNull]
         public int Armor { get; set; }
 
         public int Damage => throw new NotImplementedException();
 
         public int X { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Y { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override int Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void Attack()
         {

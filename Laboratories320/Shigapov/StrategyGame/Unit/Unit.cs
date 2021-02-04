@@ -7,7 +7,7 @@ namespace Laboratories320.Shigapov.StrategyGame
 {
     abstract class Unit: IKill
     {
-        public virtual int Health { get; set; }
+        public abstract int Health { get; set; }
 
         public void Kill()
         {
