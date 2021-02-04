@@ -6,6 +6,8 @@ namespace Laboratories320.Musin.StrategyGame
 {
     abstract class Unit : IDestroyable
     {
+        public abstract string Name { get; set; }
+        
         public abstract int Health { get; set; }
 
         public void Destroy()

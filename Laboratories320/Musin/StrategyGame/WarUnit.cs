@@ -6,6 +6,7 @@ namespace Laboratories320.Musin.StrategyGame
 {
     class WarUnit : Unit, IMoveable, IAttackable, IDamageble
     {
+        public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override int Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Speed { get; set; }
         public int Armor { get; set; }
