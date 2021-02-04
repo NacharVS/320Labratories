@@ -19,5 +19,13 @@ namespace Laboratories320.Hamatullin.Mongo2praktik
             var collection = database.GetCollection<Archer>("Archers");
             await collection.ReplaceOneAsync(archer => archer.Name == nameArcher, archer);
         }
+        public static async Task ReplaceMongoUpsert(Archer archer, string nameArcher)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Archer>("Archers");
+            await collection.ReplaceOneAsync(archer => archer.Name == nameArcher, archer,new ReplaceOptions { IsUpsert = true });
+        }
     }
 }

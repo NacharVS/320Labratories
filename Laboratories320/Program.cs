@@ -17,10 +17,12 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            //MongoMethod.MongoInsert(new Archer("Эмильчанский", 150, 10, 50, 100)).GetAwaiter().GetResult();
+            //MongoMethod.MongoInsert(new Archer("Артемида", 999, 999, 999, 999)).GetAwaiter().GetResult();
             //MongoMethod.SearchByName("Даниил").GetAwaiter().GetResult();
             //MongoMethod.MongoConnect().GetAwaiter().GetResult();
-            //MongoReplace.ReplaceMongo(new Archer("Эмиа", 200, 30, 10, 50), "Эмильчанский").GetAwaiter().GetResult();
+            //MongoReplace.ReplaceMongo(new Archer("Finn", 300, 30, 100, 50), "Даниил").GetAwaiter().GetResult();
+            MongoReplace.ReplaceMongoUpsert(new Archer("Гильгамеш", 699, 90, 500, 600),"Ктото неизвестный").GetAwaiter().GetResult();
+
         }
     }
 }

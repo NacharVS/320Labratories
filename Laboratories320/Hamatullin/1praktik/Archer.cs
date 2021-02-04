@@ -13,7 +13,9 @@ namespace Laboratories320.Hamatullin._1praktik
         [BsonIgnoreIfDefault]
         public ObjectId Id { get; set; }
         public int Ammunition { get; set; } = 50;
+        [BsonIgnore]
         public int Range { get; } = 10;
+        [BsonElement("Damage to the enemy")]
         public int Damage { get; set; }
 
         public Archer(string Name, int Hp, int Speed, int Armor, int Damage) : base(Name, Hp, Speed, Armor)
