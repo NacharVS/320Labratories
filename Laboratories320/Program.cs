@@ -8,6 +8,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Libmongocrypt;
 using Laboratories320.Saifetdinov.StrategyGame;
 using Laboratories320.Saifetdinov.MongoPracktic1;
+using Laboratories320.Saifetdinov.MongoPractic2;
 
 namespace Laboratories320
 {
@@ -16,9 +17,10 @@ namespace Laboratories320
         static void Main(string[] args)
         {
             //MethodMongo.MongoInsert(new Healer("Bill", 12, 100, 2, 25, 10, 15, 10, 9)).GetAwaiter().GetResult();
+            //MethodMongo.SearchByName("Ранис").GetAwaiter().GetResult();
+            //MethodMongo.MongoConnect().GetAwaiter().GetResult();
+            MethodMongo2.Replace(new Healer("Imil", 12, 100, 2, 25, 10, 15, 10, 9), "Ranis").GetAwaiter().GetResult();
 
-            MethodMongo.SearchByName("Ранис").GetAwaiter().GetResult();
-            MethodMongo.MongoConnect().GetAwaiter().GetResult();
         }
     }
 }
