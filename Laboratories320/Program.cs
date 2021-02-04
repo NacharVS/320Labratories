@@ -49,9 +49,10 @@ namespace Laboratories320
             };
 
 
-            Hero.HeroInsert(h1).GetAwaiter().GetResult();
-            Hero.HeroInsert(h2).GetAwaiter().GetResult();
-           /* Hero.ReplaceByName("Hero21", h).GetAwaiter().GetResult();*/
+            /*Hero.HeroInsert(h1).GetAwaiter().GetResult();
+            Hero.HeroInsert(h2).GetAwaiter().GetResult();*/
+           /* Hero.HeroInsert(h).GetAwaiter().GetResult();*/
+            Hero.ReplaceByName("Hero21", h).GetAwaiter().GetResult();
         }
 
     }

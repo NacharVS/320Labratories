@@ -13,6 +13,7 @@ namespace Laboratories320
     {
 
         [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonIgnoreIfDefault]
         public object Id { get; set; }
         [BsonIgnoreIfNull]
         public string Name { get; set; }
