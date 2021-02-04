@@ -14,12 +14,10 @@ namespace Laboratories320
 
         static void Main(string[] args)
         {
-            FillMongobd.MongoInsert(new Atacker("Tom",2,45,22,99)).GetAwaiter().GetResult();
-            FillMongobd.MongoInsert(new Atacker("Hardy", 5, 66, 29, 90)).GetAwaiter().GetResult();
-            FillMongobd.MongoInsert(new Atacker("Tim", 15, 25, 52, 29)).GetAwaiter().GetResult();
-            FillMongobd.MongoInsert(new Atacker("Ling", 6, 42, 23, 9)).GetAwaiter().GetResult();
-            FillMongobd.MongoInsert(new Atacker("Kiter", 5, 45, 62, 99)).GetAwaiter().GetResult();
-            //FillMongobd.SearchByName("Варвулл").GetAwaiter().GetResult();
+            
+
+            FillMongobd.Replace( new Atacker("Ret", 111, 45, 62,49), "Kiter").GetAwaiter().GetResult();
+
         }
 
 

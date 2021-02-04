@@ -47,5 +47,15 @@ namespace Laboratories320.mongobd
 
             }
         }
+        public static async Task Replace(Atacker atc, string nameArcher)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Atacker>("Atackers");
+            await collection.ReplaceOneAsync(archer => archer.Name == nameArcher, atc, new ReplaceOptions { IsUpsert = true });
+
+        }
+
     }
 }
