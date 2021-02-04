@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Laboratories320.task_14._01._21
 {
     class Fairy : Unit, IHealth, IMove, IHeal
     {
+        public ObjectId Id { get; set; }
         public string SpesialPower { get; set; }
 
         public int Helth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
