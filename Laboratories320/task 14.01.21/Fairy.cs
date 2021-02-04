@@ -13,7 +13,7 @@ namespace Laboratories320.task_14._01._21
         [BsonElement("Spesial Power")]
         public string SpesialPower { get; set; }
 
-        public int Helth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Helth { get; set ; }
 
         public void Heal()
         {
