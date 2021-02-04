@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
 
@@ -9,8 +11,9 @@ namespace Laboratories320
 {
     class Hero : IMovable, IDestroyable
     {
-        [BsonId]
-        public int HeroId;
+
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        public object Id { get; set; }
         [BsonIgnoreIfNull]
         public string Name { get; set; }
         [BsonIgnoreIfDefault]

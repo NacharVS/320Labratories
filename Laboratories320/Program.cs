@@ -32,12 +32,26 @@ namespace Laboratories320
 
             Hero h = new Hero
             {
-                Name = "Hero21",
+                Name = "Hero221",
                 Cost = 4000
             };
+            Hero h1 = new Hero
+            {
+                Name = "Hero2",
+                Cost = 2200,
+                NumberOfLife = 4
+            };
+            Hero h2 = new Hero
+            {
+                Name = "Hero3",
+                Cost = 4600,
+                NumberOfLife = 7
+            };
 
-          /*  Hero.HeroInsert(h).GetAwaiter().GetResult();*/
-            Hero.ReplaceByName("Hero1", h).GetAwaiter().GetResult();
+
+            Hero.HeroInsert(h1).GetAwaiter().GetResult();
+            Hero.HeroInsert(h2).GetAwaiter().GetResult();
+           /* Hero.ReplaceByName("Hero21", h).GetAwaiter().GetResult();*/
         }
 
     }
