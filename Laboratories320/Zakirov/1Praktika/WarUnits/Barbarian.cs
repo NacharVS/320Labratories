@@ -11,8 +11,11 @@ namespace Laboratories320.Zakirov._1Praktika
         [BsonId]
         [BsonIgnoreIfDefault]
         public ObjectId Id { get; set; }
+        [BsonIgnore]
         public int Level { get; set; }
+        [BsonElement("Amount resource")]
         public int AmountResources { get; set; } //объем ресурсов, которых крадет варвар
+        [BsonElement("Damage done")]
         public int DamageDone { get; set; } //нанесенный урон
 
         public Barbarian(string Name, int Health, int AttackSpeed, int MovementSpeed, int Speed, int AmountResources, int DamageDone) : base(Name, Health, AttackSpeed, MovementSpeed, Speed)
