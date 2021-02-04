@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Laboratories320.Zakirov._1Praktika
 {
     class Barbarian : WarUnit //варвар
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
+        public int Level { get; set; }
         public int AmountResources { get; set; } //объем ресурсов, которых крадет варвар
         public int DamageDone { get; set; } //нанесенный урон
 
