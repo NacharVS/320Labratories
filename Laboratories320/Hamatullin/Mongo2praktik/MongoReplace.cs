@@ -10,6 +10,7 @@ namespace Laboratories320.Hamatullin.Mongo2praktik
 {
     class MongoReplace
     {
+        //готово
         public static async Task ReplaceMongo(Archer archer, string nameArcher)
         {
             string connectionString = "mongodb://localhost:27017";
