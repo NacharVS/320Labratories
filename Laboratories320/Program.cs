@@ -11,11 +11,7 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            Fairy fairy1 = new Fairy() { Name = "Bloom", Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
-            Fairy fairy2 = new Fairy() { Name = "Aisha", Kindness = 80, Knowlege = 92, Power = 50, SpesialPower = "Water bol" };
-            //MongoDBTest.MongoInsert(fairy1).GetAwaiter().GetResult();
-            //MongoDBTest.SearchByName("Aisha").GetAwaiter().GetResult();
-            MongoDBTest.MongoConnect().GetAwaiter().GetResult();
+            
         }
     }
 }

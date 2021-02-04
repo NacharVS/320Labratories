@@ -10,6 +10,17 @@ namespace Laboratories320.task_02._02._21
 {
     class MongoDBTest
     {
+        public static void MainMongo()
+        {
+            Fairy fairy1 = new Fairy() { Name = "Bloom", Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
+            Fairy fairy2 = new Fairy() { Name = "Aisha", Kindness = 80, Knowlege = 92, Power = 50, SpesialPower = "Water bol" };
+            Fairy fairy3 = new Fairy() { Name = "Blooooooom", Kindness = 80, Knowlege = 92, Power = 50, SpesialPower = "Water bol" };
+
+            //MongoDBTest.MongoInsert(fairy1).GetAwaiter().GetResult();
+            //MongoDBTest.SearchByName("Aisha").GetAwaiter().GetResult();
+            //MongoDBTest.MongoConnect().GetAwaiter().GetResult();
+            //MongoDBTest.UpdatePerson(fairy3, "Bloom").GetAwaiter().GetResult();
+        }
         public static async Task MongoInsert(Fairy fairy)
         {
             var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
@@ -41,6 +52,13 @@ namespace Laboratories320.task_02._02._21
                 Console.WriteLine(item.SpesialPower);
 
             }
+        }
+
+        public static async Task UpdatePerson(Fairy fairy, string fairyName)
+        {
+            var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
+            var collection = database.GetCollection<Fairy>("Alphea");
+            var res = await collection.ReplaceOneAsync(fair => fair.Name == fairyName, fairy, new UpdateOptions { IsUpsert = true });
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Laboratories320.task_14._01._21
     class Fairy : Unit, IHealth, IMove, IHeal
     {
         [BsonId]
+        [BsonIgnore]
         public ObjectId Id { get; set; }
         [BsonElement("Spesial Power")]
         public string SpesialPower { get; set; }
