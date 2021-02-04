@@ -6,11 +6,9 @@ namespace Laboratories320.task_14._01._21
 {
     class Unit
     {
-        string name;
-        int power;
-        int kindness;
-        int knowlege;
-        
-
+        public string Name { get; set; }
+        public int Power { get; set; }
+        public int Kindness { get; set; }
+        public int Knowlege { get; set; }
     }
 }
