@@ -8,9 +8,13 @@ using MongoDB.Driver;
 
 namespace Laboratories320.task_02._02._21
 {
-    class MongoDB
+    class MongoDBTest
     {
-        //Fairy fairy = new Fairy() {Name = "Bloom", Helth = 67, Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
+        public static void MainMongoDB()
+        {
+            Fairy fairy = new Fairy() {Name = "Bloom", Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
+            MongoInsert(fairy);
+        }
 
         static async Task MongoInsert(Fairy fairy)
         {

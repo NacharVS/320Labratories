@@ -1,8 +1,8 @@
-﻿using Laboratories320.SemSaet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Laboratories320.task_02._02._21;
 
 namespace Laboratories320
 {
@@ -10,7 +10,7 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            Elf elf = 
+            MongoDBTest.MainMongoDB();
         }
     }
 }
