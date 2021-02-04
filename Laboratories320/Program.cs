@@ -26,11 +26,18 @@ namespace Laboratories320
 
             //Tasking t1 = new Tasking();
             //t1.Start();
-            Tasking2 task = new Tasking2();
-            task.Start();
+            /*Tasking2 task = new Tasking2();
+            task.Start();*/
 
 
-            
+            Hero h = new Hero
+            {
+                Name = "Hero21",
+                Cost = 4000
+            };
+
+          /*  Hero.HeroInsert(h).GetAwaiter().GetResult();*/
+            Hero.ReplaceByName("Hero1", h).GetAwaiter().GetResult();
         }
 
     }

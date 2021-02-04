@@ -37,6 +37,15 @@ namespace Laboratories320
             var collection = database.GetCollection<Hero>("Hero");
             await collection.InsertOneAsync(h);
         }
+
+        public static async Task ReplaceByName(string newname, Hero newhero)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            await collection.ReplaceOneAsync(hero => hero.Name == newname, newhero);
+        }
     }
 
    
