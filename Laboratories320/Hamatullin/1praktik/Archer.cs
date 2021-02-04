@@ -1,4 +1,6 @@
 ﻿using Laboratories320.Hamatullin._1praktik.Interface;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +9,9 @@ namespace Laboratories320.Hamatullin._1praktik
 {
     class Archer : WarUnit, IRechargable
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
         public int Ammunition { get; set; } = 50;
         public int Range { get; } = 10;
         public int Damage { get; set; }
