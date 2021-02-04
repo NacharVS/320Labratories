@@ -4,8 +4,12 @@ using System.Text;
 
 namespace Laboratories320.Saifetdinov.StrategyGame
 {
-    class Building : BasicInformation, IWaitingBuilder, IBuildingDestroyed
+    class Building : IWaitingBuilder, IBuildingDestroyed
     {
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public int Health { get; set; }
+        public int Race { get; set; }
         public int AreaCastle { get; set; }
 
         public void BuildinDestroyed()
