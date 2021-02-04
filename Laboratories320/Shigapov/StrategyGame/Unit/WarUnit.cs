@@ -2,14 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Libmongocrypt;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Laboratories320.Shigapov.StrategyGame
 {
-    class WarUnit : Unit , IAttack,IMove
+    class WarUnit : Unit, IAttack, IMove
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId id;
+        [BsonIgnoreIfDefault]
         public int Speed { get; set; }
+        [BsonIgnoreIfNull]
         public int Armor { get; set; }
-        public override int Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public int Damage => throw new NotImplementedException();
 

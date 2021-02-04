@@ -33,9 +33,10 @@ namespace Laboratories320
             WarUnit z = new WarUnit
             {
                 Speed = 3,
-                Armor = 13
+                Armor = 13,
+                Health = 100
             };
-            MongpTest.MongoInsert(z);
+            MongpTest.MongoInsert(z).GetAwaiter().GetResult();
 
         }
     }
