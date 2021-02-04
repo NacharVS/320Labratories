@@ -26,7 +26,7 @@ namespace Laboratories320.Saifetdinov.MongoPracktic1
             string connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("MondoHealer");
-            var collection = database.GetCollection<StrategyGame.Healer>("HealerSystem");
+            var collection = database.GetCollection<Healer>("healer");
             var healer = new BsonDocument();
             var healers = await collection.Find(healer).ToListAsync();
 
