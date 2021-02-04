@@ -28,12 +28,18 @@ namespace Laboratories320
         {
 
         }
+
+        public static async Task HeroInsert(Hero h)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            await collection.InsertOneAsync(h);
+        }
     }
 
-    static async Task HeroInsert(Hero h)
-    {
-        string connectionString = "mongo"
-    }
+   
 
 
 }
