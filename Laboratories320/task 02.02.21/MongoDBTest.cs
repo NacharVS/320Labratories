@@ -54,11 +54,18 @@ namespace Laboratories320.task_02._02._21
             }
         }
 
-        public static async Task UpdatePerson(Fairy fairy, string fairyName)
+        public static async Task ReplacePers(Fairy fairy, string fairyName)
         {
             var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
             var collection = database.GetCollection<Fairy>("Alphea");
             var res = await collection.ReplaceOneAsync(fair => fair.Name == fairyName, fairy, new UpdateOptions { IsUpsert = true });
+        }
+
+        public static async Task UpdatePerson(string fairyName, string spesialPower)
+        {
+            var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
+            var collection = database.GetCollection<Fairy>("Alphea");
+            var res = await collection.UpdateOneAsync(fair => fair.Name == fairyName, fair => fair.SpesialPower = spesialPower);
         }
     }
 }
