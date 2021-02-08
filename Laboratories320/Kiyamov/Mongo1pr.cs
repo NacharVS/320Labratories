@@ -17,7 +17,7 @@ namespace Laboratories320.Kiyamov
         string connectionString = "mongodb://localhost:27017";
         var client = new MongoClient(connectionString);
         var database = client.GetDatabase("Game");
-        var collection = database.GetCollection<Builder>("Archers");
+        var collection = database.GetCollection<Builder>("Builders");
         await collection.InsertOneAsync(builder);
     }
     public static async Task SearchByName(string searchName)
@@ -25,7 +25,7 @@ namespace Laboratories320.Kiyamov
         string connectionString = "mongodb://localhost:27017";
         var client = new MongoClient(connectionString);
         var database = client.GetDatabase("Game");
-        var collection = database.GetCollection<Archer>("Archers");
+        var collection = database.GetCollection<Builder>("Builders");
         var builder = await collection.Find(std => std.Name == searchName).ToListAsync();
 
         foreach (var item in builder)
@@ -38,7 +38,7 @@ namespace Laboratories320.Kiyamov
         string connectionString = "mongodb://localhost:27017";
         var client = new MongoClient(connectionString);
         var database = client.GetDatabase("Game");
-        var collection = database.GetCollection<Archer>("Archers");
+        var collection = database.GetCollection<Builder>("Builders");
         var builder = new BsonDocument();
         var builders = await collection.Find(builder).ToListAsync();
 
