@@ -78,5 +78,44 @@ namespace Laboratories320.Musin.Mongodb
             var collection = database.GetCollection<Knight>("MusinSystem");
             await collection.ReplaceOneAsync(std => std.Name == name, kn);
         }
+
+        public static async Task UpdateByName(int speed, string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Knight>("MusinSystem");
+            var update = Builders<Knight>.Update.Set<double>(a => a.Speed, speed);
+            await collection.UpdateManyAsync(kn => kn.Name == Name, update);
+        }
+
+        public static async Task UpdateByNameMany(int speed, string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Knight>("MusinSystem");
+            var update = Builders<Knight>.Update.Set(a => a.Speed, speed);
+            await collection.UpdateManyAsync(kn => kn.Name == Name, update);
+        }
+
+        public static async Task DeleteByName(string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Knight>("MusinSystem");
+            await collection.DeleteManyAsync(kn => kn.Name == Name);
+        }
+
+        public static async Task DeleteByNameMany(string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Game");
+            var collection = database.GetCollection<Knight>("MusinSystem");
+            await collection.DeleteManyAsync(kn => kn.Name == Name);
+
+        }
     }
 }
