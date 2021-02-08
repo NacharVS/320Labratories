@@ -51,9 +51,44 @@ namespace Laboratories320
             await collection.ReplaceOneAsync(hero => hero.Name == newname, newhero);
         }
 
-        public static async Task Update (string name, in numberoflife)
+        public static async Task Update (string name, int numberoflife)
         {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            var update = Builders<Hero>.Update.Set(h => h.NumberOfLife, numberoflife);
+            await collection.UpdateOneAsync(hero => hero.Name == name, update);
+        }
 
+        public static async Task UpdateMany(string name, int numberoflife)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            var update = Builders<Hero>.Update.Set(h => h.NumberOfLife, numberoflife);
+            await collection.UpdateManyAsync(hero => hero.Name == name, update);
+        }
+
+        public static async Task Delete(string name, int numberoflife)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            var delete = Builders<Hero>.Filter.Eq(h => h.NumberOfLife, numberoflife);
+            await collection.DeleteOneAsync(delete);
+        }
+
+        public static async Task DeleteMany(string name, int numberoflife)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            var delete = Builders<Hero>.Filter.Eq(h => h.NumberOfLife, numberoflife);
+            await collection.DeleteManyAsync(delete);
         }
     }
 
