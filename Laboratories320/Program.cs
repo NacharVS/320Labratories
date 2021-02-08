@@ -9,6 +9,7 @@ using MongoDB.Libmongocrypt;
 using Laboratories320.Saifetdinov.StrategyGame;
 using Laboratories320.Saifetdinov.MongoPracktic1;
 using Laboratories320.Saifetdinov.MongoPractic2;
+using Laboratories320.Saifetdinov.MongoPracktic3;
 
 namespace Laboratories320
 {
@@ -19,8 +20,12 @@ namespace Laboratories320
             //MethodMongo.MongoInsert(new Healer("Bill", 12, 100, 2, 25, 10, 15, 10, 9)).GetAwaiter().GetResult();
             //MethodMongo.SearchByName("Ранис").GetAwaiter().GetResult();
             //MethodMongo.MongoConnect().GetAwaiter().GetResult();
-            MethodMongo2.Replace(new Healer("Imil", 12, 100, 2, 25, 10, 15, 10, 9), "Ranis").GetAwaiter().GetResult();
-
+            //MethodMongo.MongoInsert(new Healer("Po", 1, 15, 2, 4, 10, 1, 6, 7)).GetAwaiter().GetResult();
+            //MethodMongo.MongoInsert(new Healer("Po", 1, 15, 2, 4, 10, 1, 6, 7)).GetAwaiter().GetResult();
+            //MethodMongo.MongoInsert(new Healer("Po", 1, 15, 2, 4, 10, 1, 6, 7)).GetAwaiter().GetResult();
+            //MethodMongo3.MongoUpdateOne("Ran", 20).GetAwaiter().GetResult();
+            //MethodMongo3.MongoDeleteMany("Po").GetAwaiter().GetResult();
+            MethodMongo3.MongoDeleteOne("Po").GetAwaiter().GetResult();
         }
     }
 }
