@@ -4,7 +4,14 @@ using System.Text;
 
 namespace Laboratories320.Gaifullin.Mongo
 {
-    class Unitt
+    abstract class Unitt : IKill
     {
+        public abstract int Health { get; set; }
+        public virtual int Health { get; set; }
+
+        public void Kill()
+        {
+        }
+
     }
 }
