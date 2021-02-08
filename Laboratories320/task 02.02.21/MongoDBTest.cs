@@ -65,7 +65,7 @@ namespace Laboratories320.task_02._02._21
         {
             var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
             var collection = database.GetCollection<Fairy>("Alphea");
-            var res = await collection.UpdateOneAsync(fair => fair.Name == fairyName, fair => fair.SpesialPower = spesialPower);
+            var res = await collection.UpdateOneAsync(fair => fair.Name == fairyName, fair => fair.SpesialPower);
         }
     }
 }
