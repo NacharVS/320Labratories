@@ -16,7 +16,6 @@ namespace Laboratories320
         {
             
 
-            FillMongobd.Replace( new Atacker("Ret", 111, 45, 62,49), "Kiter").GetAwaiter().GetResult();
 
         }
 
