@@ -54,5 +54,23 @@ namespace Laboratories320.Smirnov.Mongo_7_
             var collection = database.GetCollection<Assasin>("Assasin");
             await collection.ReplaceOneAsync(std => std.Name == name, assasin);
         }
+        public static async Task MongoDeleteByHealth(double hlth)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("StrategyGame");
+            var collection = database.GetCollection<Assasin>("Assasin");
+            await collection.DeleteManyAsync(hl => hl.Health == hlth);
+        }
+
+        public static async Task MongoUpdate(string searchName, double newSize)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("StrategyGame");
+            var collection = database.GetCollection<Assasin>("Assasin");
+            var update = Builders<Assasin>.Update.Set(x => x.Speed, newSize);
+            await collection.UpdateManyAsync(ptt => ptt.Name == searchName, update);
+        }
     }
 }
