@@ -20,11 +20,11 @@ namespace Laboratories320
             //MethodMongo.MongoInsert(new Barbarian("Варвер", 90, 55, 43, 78, 85, 36)).GetAwaiter().GetResult();
             //MethodMongo.MongoInsert(new Barbarian("Вагир", 93, 14, 64, 23, 86, 46)).GetAwaiter().GetResult();
             //MethodMongo.MongoInsert(new Barbarian("Вайкар", 92, 23, 86, 65, 75, 32)).GetAwaiter().GetResult();
-            MethodMongo.MongoInsert(new Barbarian("Чаронор", 92, 23, 86, 65, 75, 32)).GetAwaiter().GetResult();
-            MethodMongo.MongoInsert(new Barbarian("Зореан", 92, 23, 86, 65, 75, 32)).GetAwaiter().GetResult();
+            //MethodMongo.MongoInsert(new Barbarian("Чаронор", 92, 23, 86, 65, 75, 32)).GetAwaiter().GetResult();
+            //MethodMongo.MongoInsert(new Barbarian("Зореан", 92, 23, 86, 65, 75, 32)).GetAwaiter().GetResult();
             //MethodMongo.SearchByName("Варвулл").GetAwaiter().GetResult();
 
-            ReplaceMongo.MongoReplace(new Barbarian("Нароган", 43, 75, 17, 86, 87, 43), "Вагир").GetAwaiter().GetResult();
+            //ReplaceMongo.MongoReplace(new Barbarian("Нароган", 43, 75, 17, 86, 87, 43), "Вагир").GetAwaiter().GetResult();
         }
     }
 }
