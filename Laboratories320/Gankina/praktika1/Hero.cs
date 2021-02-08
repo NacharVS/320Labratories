@@ -65,6 +65,25 @@ namespace Laboratories320
             var update = Builders<Hero>.Update.Set(h => h.NumberOfLife, numberoflife);
             await collection.UpdateManyAsync(hero => hero.Name == name, update);
         }
+        public static async Task Delete(string name)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            await collection.DeleteOneAsync
+                 (h => h.Name == name);
+        }
+
+        public static async Task DeleteMany(string name, int numberoflife)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Milka");
+            var collection = database.GetCollection<Hero>("Hero");
+            await collection.DeleteManyAsync
+                 (h => h.Name == name);
+        }
 
     }
 }
