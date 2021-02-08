@@ -25,14 +25,16 @@ namespace Laboratories320.Shigapov.Mongo
 
             Player y = new Player
             {
-                Speed = 3,
-                Armor = 23,
-                Health = 100,
-                Name = "Alex"
+                Speed = 20,
+                Armor = 45,
+                Health = 90,
+                Name = "Slava"
             };
-           ReplaceByName(y, "Ivan").GetAwaiter().GetResult();
+
+           DeleteByName("Ivan").GetAwaiter().GetResult();
 
         }
+
         public static async Task MongoInsert(Player pot)
         {
             string connectionString = "mongodb://localhost:27017";
@@ -42,6 +44,7 @@ namespace Laboratories320.Shigapov.Mongo
             await collection.InsertOneAsync(pot);
 
         }
+
         public static async Task MongoConnect()
         {
             string connectionString = "mongodb://localhost:27017";
@@ -56,6 +59,7 @@ namespace Laboratories320.Shigapov.Mongo
                 Console.WriteLine(item.Speed);
             }
         }
+
         public static async Task SearchByName(string Name)
         {
             string connectionString = "mongodb://localhost:27017";
@@ -77,6 +81,25 @@ namespace Laboratories320.Shigapov.Mongo
             var database = client.GetDatabase("Player");
             var collection = database.GetCollection<Player>("CyberSportSystem");
             await collection.ReplaceOneAsync(std => std.Name == Name, Z );
+        }
+
+        public static async Task UpdateByName (double armor, string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Player");
+            var collection = database.GetCollection<Player>("CyberSportSystem");
+            var update = Builders<Player>.Update.Set<double>(a => a.Armor, armor);
+            await collection.UpdateManyAsync(std => std.Name == Name, update);
+        }
+
+        public static async Task DeleteByName( string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Player");
+            var collection = database.GetCollection<Player>("CyberSportSystem");       
+            await collection.DeleteManyAsync(std => std.Name == Name);
         }
     }
 }
