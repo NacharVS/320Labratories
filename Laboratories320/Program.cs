@@ -5,6 +5,7 @@ using Laboratories320.Volkov.ThreadLocker;
 using Laboratories320.Volkov.Tasks;
 using Laboratories320.Volkov.TasksPractice2;
 
+
 namespace Laboratories320
 {
     class Program

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Laboratories320.Volkov._1_practice.War_Units
 {
-    class Archer : Unit, IAttackable, IMoveable, IDefendable, IDestroy
+    public class Archer : Unit, IAttackable, IMoveable, IDefendable, IDestroy
     {
         public int Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

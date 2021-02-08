@@ -48,6 +48,7 @@ namespace Laboratories320.Volkov._6_practice
         public static GameCreationStart user4 = new GameCreationStart("Ruslan", "18.06.2002", 5, 4, 42);
         public static GameCreationStart user5 = new GameCreationStart("Kirecb", "24.05.2002", 4, 4, 100);
 
+
         public static List<GameCreationStart> users = new List<GameCreationStart> { user1, user2, user3, user4, user5 };
 
         public static void SearchByName(string name)
