@@ -26,7 +26,7 @@ namespace Laboratories320.Sindryakov.Mongo
                 Force = 33,
                 Name = "Vilen",
             };
-            ReplaceByName(u2, "Valera").GetAwaiter().GetResult();
+            DeleteByName("Valera").GetAwaiter().GetResult();
         }
 
         public static async Task MongoInsert(Archer potato)
@@ -73,6 +73,24 @@ namespace Laboratories320.Sindryakov.Mongo
             var database = client.GetDatabase("User");
             var collection = database.GetCollection<Archer>("ValSystem");
             await collection.ReplaceOneAsync(std => std.Name == Name, A);
+        }
+
+        public static async Task UpdateByName(double force, string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("User");
+            var collection = database.GetCollection<Archer>("ValSystem");
+            var update = Builders<Archer>.Update.Set<double>(a => a.Force, force);
+            await collection.UpdateManyAsync(std => std.Name == Name, update);
+        }
+        public static async Task DeleteByName(string Name)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("User");
+            var collection = database.GetCollection<Archer>("ValSystem");
+            await collection.DeleteOneAsync(std => std.Name == Name);
         }
     }
 }
