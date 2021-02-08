@@ -50,6 +50,11 @@ namespace Laboratories320
             var collection = database.GetCollection<Hero>("Hero");
             await collection.ReplaceOneAsync(hero => hero.Name == newname, newhero);
         }
+
+        public static async Task Update (string name, in numberoflife)
+        {
+
+        }
     }
 
    
