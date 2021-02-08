@@ -6,6 +6,7 @@ using Laboratories320.Hamatullin._5praktik;
 using Laboratories320.Hamatullin._6praktik;
 using Laboratories320.Hamatullin.Mongo1praktik;
 using Laboratories320.Hamatullin.Mongo2praktik;
+using Laboratories320.Hamatullin.Mongo3praktik;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -21,7 +22,11 @@ namespace Laboratories320
             //MongoMethod.SearchByName("Даниил").GetAwaiter().GetResult();
             //MongoMethod.MongoConnect().GetAwaiter().GetResult();
             //MongoReplace.ReplaceMongo(new Archer("Finn", 300, 30, 100, 50), "Даниил").GetAwaiter().GetResult();
-            MongoReplace.ReplaceMongoUpsert(new Archer("Гильгамеш", 699, 90, 500, 600),"Ктото неизвестный").GetAwaiter().GetResult();
+            //MongoReplace.ReplaceMongoUpsert(new Archer("Гильгамеш", 699, 90, 500, 600),"Ктото неизвестный").GetAwaiter().GetResult();
+            //MongoUpdateAndDelete.UpdateMongo("Гильгамеш", 711).GetAwaiter().GetResult();
+            //MongoUpdateAndDelete.UpdateMongoMany("Гильгамеш", 711).GetAwaiter().GetResult();
+            //MongoUpdateAndDelete.DeleteMongo("Гильгамеш").GetAwaiter().GetResult();
+            MongoUpdateAndDelete.DeleteMongoMany("Гильгамеш").GetAwaiter().GetResult();
 
         }
     }
