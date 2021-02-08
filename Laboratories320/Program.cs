@@ -14,8 +14,8 @@ namespace Laboratories320
 
         static void Main(string[] args)
         {
-            
 
+             (FillMongobd.MongoUpdate("Tom", 23)).GetAwaiter().GetResult();
 
         }
 
