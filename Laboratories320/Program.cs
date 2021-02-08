@@ -11,7 +11,7 @@ namespace Laboratories320
     {
         static void Main(string[] args)
         {
-            
+            MongoDBTest.MainMongo();
         }
     }
 }

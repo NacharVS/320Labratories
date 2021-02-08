@@ -14,12 +14,23 @@ namespace Laboratories320.task_02._02._21
         {
             Fairy fairy1 = new Fairy() { Name = "Bloom", Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
             Fairy fairy2 = new Fairy() { Name = "Aisha", Kindness = 80, Knowlege = 92, Power = 50, SpesialPower = "Water bol" };
-            Fairy fairy3 = new Fairy() { Name = "Blooooooom", Kindness = 80, Knowlege = 92, Power = 50, SpesialPower = "Water bol" };
+            Fairy fairy3 = new Fairy() { Name = "Flora", Kindness = 90, Knowlege = 88, Power = 40, SpesialPower = "Flover pal" };
+            Fairy fairy4 = new Fairy() { Name = "Stella", Kindness = 60, Knowlege = 30, Power = 40, SpesialPower = "Sun power" };
+            Fairy fairy5 = new Fairy() { Name = "Blo0000om", Kindness = 78, Knowlege = 84, Power = 45, SpesialPower = "Dragon Fire" };
 
-            //MongoDBTest.MongoInsert(fairy1).GetAwaiter().GetResult();
+            //MongoInsert(fairy1).GetAwaiter().GetResult();
+            //MongoInsert(fairy2).GetAwaiter().GetResult();
+            //MongoInsert(fairy3).GetAwaiter().GetResult();
+            //MongoInsert(fairy4).GetAwaiter().GetResult();
+            //MongoInsert(fairy5).GetAwaiter().GetResult();
+
             //MongoDBTest.SearchByName("Aisha").GetAwaiter().GetResult();
             //MongoDBTest.MongoConnect().GetAwaiter().GetResult();
             //MongoDBTest.UpdatePerson(fairy3, "Bloom").GetAwaiter().GetResult();
+
+            //UpdatePerson("Flora", "Flower dust").GetAwaiter().GetResult();
+            //DeletePerson("Blo0000om").GetAwaiter().GetResult();
+
         }
         public static async Task MongoInsert(Fairy fairy)
         {
@@ -58,14 +69,22 @@ namespace Laboratories320.task_02._02._21
         {
             var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
             var collection = database.GetCollection<Fairy>("Alphea");
-            var res = await collection.ReplaceOneAsync(fair => fair.Name == fairyName, fairy, new UpdateOptions { IsUpsert = true });
+            await collection.ReplaceOneAsync(fair => fair.Name == fairyName, fairy);
         }
 
         public static async Task UpdatePerson(string fairyName, string spesialPower)
         {
             var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
             var collection = database.GetCollection<Fairy>("Alphea");
-            var res = await collection.UpdateOneAsync(fair => fair.Name == fairyName, fair => fair.SpesialPower);
+            var update = Builders<Fairy>.Update.Set(x => x.SpesialPower, spesialPower);
+            await collection.UpdateOneAsync(fair => fair.Name == fairyName, update);
+        }
+
+        public static async Task DeletePerson(string fairyName)
+        {
+            var database = new MongoClient("mongodb://localhost:27017").GetDatabase("WarOfHarmony");
+            var collection = database.GetCollection<Fairy>("Alphea");
+            await collection.DeleteOneAsync(fair => fair.Name == fairyName);
         }
     }
 }
