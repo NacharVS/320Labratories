@@ -1,3 +1,23 @@
+static async Task MongoDeleteByName(string searchNname)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("MilkyWay");
+            var collection = database.GetCollection<Potato>("OchpochmacSystem");
+            await collection.DeleteManyAsync
+                (ptt => ptt.kind == searchNname);
+        }
+
+        static async Task MongoUpdate(string searchName, double newSize)
+        {
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("MilkyWay");
+            var collection = database.GetCollection<Potato>("OchpochmacSystem");
+            var update = Builders<Potato>.Update.Set(x => x.size, newSize);
+            await collection.UpdateManyAsync(ptt => ptt.kind == searchName, update);
+        }
+
         static async Task MongoInsert(Potato pot)
         {
             string connectionString = "mongodb://localhost";
