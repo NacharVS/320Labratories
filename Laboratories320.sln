@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratories320", "Laboratories320\Laboratories320.csproj", "{FB239C6C-0368-4250-A7E3-AE001C0CF5FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratories320", "Laboratories320\Laboratories320.csproj", "{FB239C6C-0368-4250-A7E3-AE001C0CF5FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankiGame", "TankiGame\TankiGame.csproj", "{F8D12DD1-2651-45B2-B9C3-D616CA482823}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FB239C6C-0368-4250-A7E3-AE001C0CF5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB239C6C-0368-4250-A7E3-AE001C0CF5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB239C6C-0368-4250-A7E3-AE001C0CF5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D12DD1-2651-45B2-B9C3-D616CA482823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D12DD1-2651-45B2-B9C3-D616CA482823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D12DD1-2651-45B2-B9C3-D616CA482823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D12DD1-2651-45B2-B9C3-D616CA482823}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

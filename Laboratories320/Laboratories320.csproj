@@ -13,4 +13,8 @@
     <PackageReference Include="MongoDB.Driver.GridFS" Version="2.11.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TankiGame\" />
+  </ItemGroup>
+
 </Project>
