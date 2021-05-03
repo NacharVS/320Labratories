@@ -26,7 +26,7 @@ namespace Laboratories320
             //MongoUpdateAndDelete.UpdateMongo("Гильгамеш", 711).GetAwaiter().GetResult();
             //MongoUpdateAndDelete.UpdateMongoMany("Гильгамеш", 711).GetAwaiter().GetResult();
             //MongoUpdateAndDelete.DeleteMongo("Гильгамеш").GetAwaiter().GetResult();
-            MongoUpdateAndDelete.DeleteMongoMany("Гильгамеш").GetAwaiter().GetResult();
+            //MongoUpdateAndDelete.DeleteMongoMany("Гильгамеш").GetAwaiter().GetResult();
 
         }
     }
