@@ -1,0 +1,6 @@
+{"Name":"Ranis","Age":18,"Group":320}
+{"Name":"Airat","Age":18,"Group":320}
+{"Name":"Marsel","Age":18,"Group":320}
+{"Name":"Imil","Age":19,"Group":320}
+{"Name":"Ilham","Age":18,"Group":320}
+
